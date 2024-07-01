@@ -15,16 +15,6 @@
       </div>
     </div>
 
-    <script>
-      document
-        .getElementById("add-task")
-        .addEventListener("click", function () {
-          const task = document.getElementById("new-task").value;
-          if (task) {
-            localStorage.setItem("newTask", task);
-            window.location.href = "todo.html";
-          }
-        });
-    </script>
+    <script src="./jsHtml.js"></script>
   </body>
 </html>

@@ -13,23 +13,6 @@
       <button id="add-more">Add More Tasks</button>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const newTask = localStorage.getItem("newTask");
-        if (newTask) {
-          const taskList = document.getElementById("task-list");
-          const taskItem = document.createElement("li");
-          taskItem.textContent = newTask;
-          taskList.appendChild(taskItem);
-          localStorage.removeItem("newTask");
-        }
-      });
-
-      document
-        .getElementById("add-more")
-        .addEventListener("click", function () {
-          window.location.href = "index.html";
-        });
-    </script>
+    <script src="./jsTodo.js"></script>
   </body>
 </html>
