@@ -37,3 +37,9 @@ function addTaskToList (task) {
     taskList.appendChild(taskItem);
 }
 
+// Navigator button
+
+const htmlBtn = document.getElementById("html-button").addEventListener("click", () => { 
+  window.location.href = "index.html"
+})
+
