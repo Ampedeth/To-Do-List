@@ -1,13 +1,5 @@
 
-// Create a new tasks by function "addTaskToList"
-document.addEventListener("DOMContentLoaded", function (taskList, taskItem) {
-    const newTask = localStorage.getItem("newTask");
-    if (newTask) {
-        addTaskToList(newTask)
-        localStorage.removeItem("newTask");
-    }
-    });
-
+// "Add More Tasks" button
 document
     .getElementById("add-more")
     .addEventListener("click", function () {
@@ -15,7 +7,7 @@ document
     });
 
 // Function for adding new tasks
-function addTaskToList (task) {
+function addTaskToList (task, taskKey) {
     const taskList = document.getElementById("task-list");
     const taskItem = document.createElement("li");
     const taskText = document.createElement("span")
@@ -25,17 +17,33 @@ function addTaskToList (task) {
     // Button near task to delate 
 
     const deleteBtn = document.createElement("button");
-        deleteBtn.textContent = "Delete";
-        deleteBtn.className = "delete-btn";
-        deleteBtn.addEventListener("click", function () {
-            taskItem.remove();
-            // Code for removing the task from storage (if needed)
-        });
+    deleteBtn.textContent = "Delete";
+    deleteBtn.className = "delete-btn";
+    deleteBtn.addEventListener("click", function () {
+        localStorage.removeItem(taskKey)
+        taskItem.remove();
+    });
     
     taskItem.appendChild(taskText);
     taskItem.appendChild(deleteBtn);
     taskList.appendChild(taskItem);
 }
+
+// Create a new tasks by function "addTaskToList"
+document.addEventListener("DOMContentLoaded", function () {
+    for (let i = 0; i < localStorage.length; i++) {
+        const taskKey = localStorage.key(i);
+        if (taskKey.startsWith('task_')) {
+            const task = localStorage.getItem(taskKey);
+            addTaskToList(task, taskKey)  
+        }
+        };
+    })
+
+        
+
+
+
 
 // Navigator button
 

@@ -4,7 +4,8 @@ document.getElementById("add-task")
         .addEventListener("click", function () {
           const task = document.getElementById("new-task").value;
           if (task) {
-            localStorage.setItem("newTask", task);
+            const taskKey = 'task_' + Date.now()
+            localStorage.setItem(taskKey, task);
             window.location.href = "todo.html";
           }
         });
