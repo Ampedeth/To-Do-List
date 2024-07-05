@@ -1,15 +1,20 @@
+
 body {
-    width: 25%;
     font-family: Arial, sans-serif;
-    background-color: #e0f7fa;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: #d0eff3;
+    overflow: scroll;
+    display: flex;
     justify-content: center;
     align-items: center;
-    
+    margin: 0;
+}
+
+.Wrapper {
+    width: 400px;
+    background-color: #f4f4f9;
+    margin: 2rem auto;
+    justify-content: center;
+    align-items: center;
 }
 
 /*Header elements*/
@@ -93,4 +98,13 @@ button:hover {
 
 #add-more:hover {
     background-color: #388e3c;
+}
+
+@media (max-width: 600px){
+    .Wrapper {
+        width: 100%;
+        max-height: 400px;
+        overflow-y: scroll;
+    }
+    
 }

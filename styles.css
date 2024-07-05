@@ -1,17 +1,21 @@
+
 body {
-    width: 25%;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    margin: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    background-color: #d0eff3;
+    overflow: scroll;
+    display: flex;
     justify-content: center;
     align-items: center;
-    
+    margin: 0;
 }
 
+.Wrapper{
+    width: 400px;
+    background-color: #f4f4f9;
+    margin: 2rem auto;
+    justify-content: center;
+    align-items: center;
+}
 
 /*Header elements*/
 .header {
@@ -81,4 +85,11 @@ button {
 
 button:hover {
     background-color: #0056b3;
+}
+
+@media (max-width: 600px){
+    .Wrapper {
+        width: 100%;
+        min-height: 0;
+    }   
 }
